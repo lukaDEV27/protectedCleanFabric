@@ -39,5 +39,4 @@ public class TipoServicoEntity implements Serializable {
 		this.nome = nome;
 	}
 	
-	
 }

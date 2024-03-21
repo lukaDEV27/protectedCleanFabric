@@ -9,32 +9,42 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import br.com.protectedCleanFabric.entity.ClienteEntity;
+import br.com.protectedCleanFabric.entity.PedidoEntity;
 import br.com.protectedCleanFabric.service.ClienteService;
+import br.com.protectedCleanFabric.service.PedidoService;
+import br.com.protectedCleanFabric.service.TipoServicoService;
 
 @Controller
-public class ClienteController {
+public class PedidoController {
+
+	@Autowired
+	private PedidoService pedidoService;
 	
 	@Autowired
 	private ClienteService clienteService;
 	
-	@GetMapping("/cliente")
-	public String cliente(ModelMap model) {
+	@Autowired
+	private TipoServicoService tipoServicoService;
+	
+	@GetMapping("/pedido")
+	public String pedido(ModelMap model) {
 		
+		model.addAttribute("pedidos", pedidoService.findAll());
+		model.addAttribute("tipo_servicos", tipoServicoService.findAll());
 		model.addAttribute("clientes", clienteService.findAll());
 		
-		return "cliente";
+		return "pedido";
 	}
-	@PostMapping("/salvar_cliente")
+	
+	@PostMapping("/salvar_pedido")
 	public ModelAndView save(
 			ModelMap model,
-			@ModelAttribute("clienteEntity") ClienteEntity clienteEntity,
+			@ModelAttribute("pedidoEntity") PedidoEntity pedidoEntity,
 			RedirectAttributes attibutes) throws Exception
 	{
-		ModelAndView mv = new ModelAndView("redirect:/cliente");
-		attibutes.addFlashAttribute("mensagem", clienteService.save(clienteEntity));
+		ModelAndView mv = new ModelAndView("redirect:/pedido");
+		attibutes.addFlashAttribute("mensagem", pedidoService.save(pedidoEntity));
 		return mv;
 	}
-			
-//
+	
 }
