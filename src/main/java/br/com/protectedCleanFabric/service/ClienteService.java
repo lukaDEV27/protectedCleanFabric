@@ -9,5 +9,6 @@ public interface ClienteService {
 	String save(ClienteEntity clienteEntity) throws Exception;
 	List<ClienteEntity> findAll();
 	ClienteEntity getOneByIdCliente (Long idCliente) throws Exception;
-
+	List<ClienteEntity> findByNomeAndTelefone (String nome, String telefone);
+	
 }

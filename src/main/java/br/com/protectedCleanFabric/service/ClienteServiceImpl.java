@@ -46,4 +46,9 @@ public class ClienteServiceImpl implements ClienteService{
 		return clienteRepository.getOneByIdCliente(idCliente);
 	}
 
+	@Override
+	public List<ClienteEntity> findByNomeAndTelefone(String nome, String telefone) {
+		return clienteRepository.findByNomeAndTelefone(nome, telefone);
+	}
+
 }

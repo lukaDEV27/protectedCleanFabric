@@ -41,6 +41,9 @@ public class ClienteController {
 		attibutes.addFlashAttribute("mensagem", clienteService.save(clienteEntity));
 		return mv;
 	}
+	
+	/*@GetMapping("/consultar_cliente/{nome}/{telefone}")
+	public ModelAndView sa*/
 			
 //
 }
