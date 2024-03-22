@@ -18,6 +18,12 @@ public class ClienteController {
 	@Autowired
 	private ClienteService clienteService;
 	
+	/*@GetMapping("/") //nome que eu quiser colocar
+	public String principal()
+	{
+		return "cliente"; //caminho real do arquivo
+	}*/
+	
 	@GetMapping("/cliente")
 	public String cliente(ModelMap model) {
 		

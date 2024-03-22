@@ -3,10 +3,12 @@ package br.com.protectedCleanFabric.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import br.com.protectedCleanFabric.entity.PedidoEntity;
 import br.com.protectedCleanFabric.repository.PedidoRepository;
 
+@Service
 public class PedidoServiceImpl implements PedidoService{
 
 	@Autowired

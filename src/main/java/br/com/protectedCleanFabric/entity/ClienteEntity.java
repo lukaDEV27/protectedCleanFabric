@@ -1,12 +1,14 @@
 package br.com.protectedCleanFabric.entity;
 
 import java.io.Serializable;
+import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -42,6 +44,9 @@ public class ClienteEntity implements Serializable{
 	
 	@Column(name = "mercadoria")
 	private String mercadoria;
+	
+	@OneToMany(mappedBy = "cliente")
+    private List<PedidoEntity> pedidos;
 
 	public Long getIdCliente() {
 		return idCliente;
@@ -113,6 +118,14 @@ public class ClienteEntity implements Serializable{
 
 	public void setMercadoria(String mercadoria) {
 		this.mercadoria = mercadoria;
+	}
+
+	public List<PedidoEntity> getPedidos() {
+		return pedidos;
+	}
+
+	public void setPedidos(List<PedidoEntity> pedidos) {
+		this.pedidos = pedidos;
 	}
 	
 }

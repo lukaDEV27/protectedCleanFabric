@@ -2,12 +2,16 @@ package br.com.protectedCleanFabric.entity;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -48,12 +52,13 @@ public class PedidoEntity implements Serializable{
 	@Column(name = "observacao")
 	private String observacao;
 	
-	//@OneToMany(mappedBy = "idTipoServico")
-	//private List<TipoServicoEntity> tipoServico;
+	@OneToMany
+	@JoinColumn(name="ts_pedido_id")
+	private List<TipoServicoEntity> tipoServicos;
 
-	//@ManyToOne
-	//@JoinColumn(name = "cliente_id", referencedColumnName = "id_cliente")
-	//private ClienteEntity cliente;
+	@ManyToOne
+    @JoinColumn(name = "cliente_id")
+    private ClienteEntity cliente;
 
 	public Long getIdPedido() {
 		return idPedido;
@@ -135,12 +140,12 @@ public class PedidoEntity implements Serializable{
 		this.observacao = observacao;
 	}
 
-	/*public List<TipoServicoEntity> getTipoServico() {
-	//	return tipoServico;
-	//}
-
-	public void setTipoServico(List<TipoServicoEntity> tipoServico) {
-		this.tipoServico = tipoServico;
+	public List<TipoServicoEntity> getTipoServicos() {
+		return tipoServicos;
+	}
+	
+	public void setTipoServicos(List<TipoServicoEntity> tipoServicos) {
+		this.tipoServicos = tipoServicos;
 	}
 
 	public ClienteEntity getCliente() {
@@ -149,7 +154,7 @@ public class PedidoEntity implements Serializable{
 
 	public void setCliente(ClienteEntity cliente) {
 		this.cliente = cliente;
-	}*/
+	}
 
-	
+//	
 }

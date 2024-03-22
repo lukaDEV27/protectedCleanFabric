@@ -22,7 +22,8 @@ public class TipoServicoEntity implements Serializable {
 	
 	@Column(name = "nome")
 	private String nome;
-
+	
+	
 	public Long getIdTipoServico() {
 		return idTipoServico;
 	}
