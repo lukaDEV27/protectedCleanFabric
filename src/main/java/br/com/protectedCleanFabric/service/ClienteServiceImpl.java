@@ -31,6 +31,7 @@ public class ClienteServiceImpl implements ClienteService{
 			this.mensagem = "Digite a mercadoria do cliente.";
 			throw new Exception("Preencha a mercadoria do cliente.");
 		} else {
+			this.mensagem = "Cliente cadastrado com sucesso!";
 			clienteRepository.saveAndFlush(clienteEntity);
 		}
 		return mensagem;

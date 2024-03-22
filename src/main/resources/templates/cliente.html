@@ -1,1 +1,77 @@
-textando página cliente
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:th="http://.thymeleaf.orf">
+	
+<link rel="stylesheet" href="style.css">
+
+<head th:insert="~{layout/cabecalho}">
+	<meta charset="ISO-8859-1" />
+
+	<title>Pagina Cliente</title>
+</head>
+
+<body>
+	<div th:insert="~{layout/menu}"></div>
+
+	<form class="form-horizontal" method="post" th:action="@{/salvar_cliente}" th:object="${clienteEntity}">
+		<div class="container">
+			<h2>Cliente</h2>
+			<div class="container">
+				<div class="alert alert-sucess" th:text="${mensagem}" th:if="${not #strings.isEmpty(mensagem)}"></div>
+
+
+				<div class="mb-3">
+					<label for="nome" class="form-label">Nome</label>
+					<input type="text" name="nome" id="nome" class="form-control" required>
+				</div>
+
+				<div class="mb-3">
+					<label for="sobrenome" class="form-label">Sobrenome</label>
+					<input type="text" name="sobrenome" id="sobrenome" class="form-control" required>
+				</div>
+
+				<div class="mb-3">
+					<label for="cpf" class="form-label">CPF</label>
+					<input type="text" name="cpf" id="cpf" class="form-control" pattern="\d{11}" maxlength="11" minlength="11"
+						placeholder="Digite somente números">
+				</div>
+
+				<div class="mb-3">
+					<label for="endereço" class="form-label">Endereço</label>
+					<input type="text" name="endereco" id="endereco" class="form-control" required>
+				</div>
+
+				<div class="mb-3">
+					<label for="bairro" class="form-label">Bairro</label>
+					<input type="text" name="bairro" id="bairro" class="form-control">
+				</div>
+				<div class="mb-3">
+					<label for="Cep" class="form-label">CEP</label>
+					<input type="text" name="cep" id="bairro" class="form-control" pattern="\d{8}" maxlength="8" minlength="8"
+						placeholder="Digite somente números">
+				</div>
+
+				<div class="mb-3">
+					<label for="telefone" class="form-label">Telefone</label>
+					<input type="tel" name="telefone" id="telefone" class="form-control" required>
+				</div>
+
+				<div class="mb-3">
+					<label for="mercadoria" class="form-label">Mercadoria</label>
+					<input type="text" name="mercadoria" id="mercadoria" class="form-control" required>
+				</div>
+
+
+				<div class="mb-3">
+					<button type="submit" class="btn btn-success form-control">Enviar</button>
+				</div>
+			</div>
+		</div>
+
+		
+	</form>
+
+	<div th:insert="~{layout/rodape}"></div>
+
+</body>
+
+</html>
