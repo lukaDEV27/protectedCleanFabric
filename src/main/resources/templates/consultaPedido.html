@@ -26,11 +26,14 @@
 				</nav>
 				<thead>
 					<tr>
-						<th>Nome</th>
-						<th>CPf</th>
-						<th>Telefone</th>
-						<th>Endereço</th>
-						<th>Mercadoria</th>
+						<th>N° Pedido</th>
+						<th>Cliente</th>
+						<th>Vendedor</th>
+						<th>Loja</th>
+						<th>Passado Por:</th>
+						<th>Data Pedido</th>
+						<th>Executado em:</th>
+						
 
 						<th class="col-1"></th>
 
@@ -39,12 +42,15 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr th:each="cliente  : ${clientes}">
+					<tr th:each="pedido  : ${pedidos}">
+						<td th:text="${pedido.num_pedido}"></td>
 						<td th:text="${cliente.Nome + ' ' + cliente.sobrenome}"></td>
-						<td th:text="${cliente.cpf}"></td>
-						<td th:text="${cliente.telefone}"></td>
-						<td th:text="${cliente.endereco + ' ' + cliente.bairro + ' ' + cliente.cep}"></td>
-						<td th:text="${cliente.mercadoria}"></td>
+						<td th:text="${pedido.vendedor}"></td>
+						<td th:text="${pedido.loja_vendedor}"></td>
+						<td th:text="${pedido.intermediador}"></td>
+						<td th:text="${pedido.data_pedido}"></td>
+						<td th:text="${pedido.data_agendamento}"></td>
+						
 
 
 						<td> <a class="btn btn-sm btn-warning"
