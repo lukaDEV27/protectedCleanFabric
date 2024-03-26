@@ -1,5 +1,6 @@
 package br.com.protectedCleanFabric.service;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,11 +48,31 @@ public class PedidoServiceImpl implements PedidoService{
 		return pedidoRepository.findAll();
 	}
 
-	//Consulta de pedidos
+	
 	@Override
 	public PedidoEntity getOneByIdPedido(Long idPedido) throws Exception {
 		
 		return pedidoRepository.getOneByIdPedido(idPedido);
+	}
+	//Consulta de pedidos
+	@Override
+	public List<PedidoEntity> consultarPedido(String clienteNome, String clienteSobrenome, Date dataAgendamento,
+			String numPedido) {
+		
+		return pedidoRepository.consultarPedido(clienteNome, clienteSobrenome, dataAgendamento, numPedido);
+	}
+
+	@Override
+	public String deleteById(Long idPedido) throws Exception {
+		try 
+		{
+			pedidoRepository.deleteById(idPedido);
+			this.mensagem = "Cliente excluído com sucesso.";
+			
+		} catch (Exception e) {
+			throw new Exception(e.getMessage());
+		}
+		return mensagem;
 	}
 
 }
