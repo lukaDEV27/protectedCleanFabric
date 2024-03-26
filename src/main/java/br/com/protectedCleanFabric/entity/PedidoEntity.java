@@ -1,8 +1,8 @@
 package br.com.protectedCleanFabric.entity;
 
 import java.io.Serializable;
+import java.sql.Timestamp;
 import java.util.Date;
-import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -11,7 +11,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -41,7 +40,7 @@ public class PedidoEntity implements Serializable{
 	private String intermediador;
 	
 	@Column(name = "data_pedido")
-	private Date dataPedido;
+	private Timestamp dataPedido;
 	
 	@Column(name = "data_agendamento")
 	private Date dataAgendamento;
@@ -52,10 +51,9 @@ public class PedidoEntity implements Serializable{
 	@Column(name = "observacao")
 	private String observacao;
 	
-	@OneToMany
-	@JoinColumn(name="ts_pedido_id")
-	private List<TipoServicoEntity> tipoServicos;
-
+	@Column(name = "tipo_servico")
+	private String tipoServicos;
+	
 	@ManyToOne
     @JoinColumn(name = "cliente_id")
     private ClienteEntity cliente;
@@ -108,11 +106,11 @@ public class PedidoEntity implements Serializable{
 		this.intermediador = intermediador;
 	}
 
-	public Date getDataPedido() {
+	public Timestamp getDataPedido() {
 		return dataPedido;
 	}
 
-	public void setDataPedido(Date dataPedido) {
+	public void setDataPedido(Timestamp dataPedido) {
 		this.dataPedido = dataPedido;
 	}
 
@@ -140,11 +138,11 @@ public class PedidoEntity implements Serializable{
 		this.observacao = observacao;
 	}
 
-	public List<TipoServicoEntity> getTipoServicos() {
+	public String getTipoServicos() {
 		return tipoServicos;
 	}
-	
-	public void setTipoServicos(List<TipoServicoEntity> tipoServicos) {
+
+	public void setTipoServicos(String tipoServicos) {
 		this.tipoServicos = tipoServicos;
 	}
 

@@ -47,4 +47,22 @@ public class ClienteServiceImpl implements ClienteService{
 		return clienteRepository.getOneByIdCliente(idCliente);
 	}
 
+	@Override
+	public List<ClienteEntity> consultarCliente(String nome, String sobrenome, String telefone) {
+		return clienteRepository.consultarCliente(nome, sobrenome, telefone);
+	}
+
+	@Override
+	public String deleteById(Long idCliente) throws Exception {
+		try 
+		{
+			clienteRepository.deleteById(idCliente);
+			this.mensagem = "Cliente excluído com sucesso.";
+			
+		} catch (Exception e) {
+			throw new Exception(e.getMessage());
+		}
+		return mensagem;
+	}
+
 }

@@ -12,7 +12,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import br.com.protectedCleanFabric.entity.PedidoEntity;
 import br.com.protectedCleanFabric.service.ClienteService;
 import br.com.protectedCleanFabric.service.PedidoService;
-import br.com.protectedCleanFabric.service.TipoServicoService;
 
 @Controller
 public class PedidoController {
@@ -23,14 +22,10 @@ public class PedidoController {
 	@Autowired
 	private ClienteService clienteService;
 	
-	@Autowired
-	private TipoServicoService tipoServicoService;
-	
 	@GetMapping("/pedido")
 	public String pedido(ModelMap model) {
 		
 		model.addAttribute("pedidos", pedidoService.findAll());
-		model.addAttribute("tipo_servicos", tipoServicoService.findAll());
 		model.addAttribute("clientes", clienteService.findAll());
 		
 		return "pedido";
