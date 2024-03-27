@@ -2,7 +2,6 @@ package br.com.protectedCleanFabric.entity;
 
 import java.io.Serializable;
 import java.sql.Date;
-import java.sql.Timestamp;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -106,11 +105,13 @@ public class PedidoEntity implements Serializable{
 		this.intermediador = intermediador;
 	}
 
-	public Timestamp getDataPedido() {
+	
+
+	public Date getDataPedido() {
 		return dataPedido;
 	}
 
-	public void setDataPedido(Timestamp dataPedido) {
+	public void setDataPedido(Date dataPedido) {
 		this.dataPedido = dataPedido;
 	}
 

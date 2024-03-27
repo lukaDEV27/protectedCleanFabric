@@ -19,8 +19,9 @@ public class ClienteController {
 	private ClienteService clienteService;
 	
 	@GetMapping("/") //nome que eu quiser colocar
-	public String principal()
+	public String principal(ModelMap model)
 	{
+		model.addAttribute("clientes", clienteService.findAll());
 		return "cliente"; //caminho real do arquivo
 	}
 
