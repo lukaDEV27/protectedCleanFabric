@@ -49,7 +49,7 @@ public class ClienteController {
 	{
 		
 		ModelAndView mv = new ModelAndView("alterar_cliente");
-		model.addAttribute("idDocente", idCliente);
+		model.addAttribute("idCliente", idCliente);
 		model.addAttribute("cliente", clienteService.getOneByIdCliente(idCliente));
 		
 		return mv;

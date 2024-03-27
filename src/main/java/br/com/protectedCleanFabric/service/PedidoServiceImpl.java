@@ -56,7 +56,7 @@ public class PedidoServiceImpl implements PedidoService{
 		try 
 		{
 			pedidoRepository.deleteById(idPedido);
-			this.mensagem = "Cliente excluído com sucesso.";
+			this.mensagem = "Pedido excluído com sucesso.";
 			
 		} catch (Exception e) {
 			throw new Exception(e.getMessage());
