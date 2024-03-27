@@ -48,11 +48,6 @@ public class ClienteServiceImpl implements ClienteService{
 	}
 
 	@Override
-	public List<ClienteEntity> consultarCliente(String nome, String sobrenome, String telefone) {
-		return clienteRepository.consultarCliente(nome, sobrenome, telefone);
-	}
-
-	@Override
 	public String deleteById(Long idCliente) throws Exception {
 		try 
 		{

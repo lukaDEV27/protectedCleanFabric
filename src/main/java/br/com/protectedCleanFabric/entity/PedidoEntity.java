@@ -1,8 +1,8 @@
 package br.com.protectedCleanFabric.entity;
 
 import java.io.Serializable;
+import java.sql.Date;
 import java.sql.Timestamp;
-import java.util.Date;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -40,7 +40,7 @@ public class PedidoEntity implements Serializable{
 	private String intermediador;
 	
 	@Column(name = "data_pedido")
-	private Timestamp dataPedido;
+	private Date dataPedido;
 	
 	@Column(name = "data_agendamento")
 	private Date dataAgendamento;

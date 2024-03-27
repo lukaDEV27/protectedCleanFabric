@@ -1,6 +1,5 @@
 package br.com.protectedCleanFabric.service;
 
-import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,18 +19,15 @@ public class PedidoServiceImpl implements PedidoService{
 	//Metodo para confirmação de cadastro
 	@Override
 	public String save(PedidoEntity pedidoEntity) throws Exception {
-		if (pedidoEntity.getDataPedido() == null) {
-			this.mensagem = "Preencha a data do pedido.";
-			throw new Exception("Preencha a data do pedido.");
-		} else if (pedidoEntity.getValor() == null) {
+		 if (pedidoEntity.getValor() == null) {
 			this.mensagem = "Digite o valor do pedido.";
 			throw new Exception("Preencha o valor do pedido.");
 		} else if (pedidoEntity.getDataAgendamento() == null) {
 			this.mensagem = "Preencha a data do agendamento do serviço.";
 			throw new Exception("Preencha a data do agendamento do serviço.");
-		} else if (pedidoEntity.getTipoServicos() == null) {
+		/*} else if (pedidoEntity.getTipoServicos() == null) {
 			this.mensagem = "Selecione o tipo de serviço agendado.";
-			throw new Exception("Selecione o tipo de serviço agendado.");
+			throw new Exception("Selecione o tipo de serviço agendado.");*/
 		} else if (pedidoEntity.getCliente() == null){
 			this.mensagem = "Preencha o campo do cliente que solicitou o serviço.";
 			throw new Exception("Preencha o campo do cliente que solicitou o serviço.");
@@ -54,14 +50,7 @@ public class PedidoServiceImpl implements PedidoService{
 		
 		return pedidoRepository.getOneByIdPedido(idPedido);
 	}
-	//Consulta de pedidos
-	@Override
-	public List<PedidoEntity> consultarPedido(String clienteNome, String clienteSobrenome, Date dataAgendamento,
-			String numPedido) {
-		
-		return pedidoRepository.consultarPedido(clienteNome, clienteSobrenome, dataAgendamento, numPedido);
-	}
-
+	
 	@Override
 	public String deleteById(Long idPedido) throws Exception {
 		try 
