@@ -33,8 +33,9 @@
 						<th>Passado Por:</th>
 						<th>Data Pedido</th>
 						<th>Executado em:</th>
-						
 
+
+						<th class="col-1"></th>
 						<th class="col-1"></th>
 
 
@@ -50,13 +51,21 @@
 						<td th:text="${pedido.intermediador}"></td>
 						<td th:text="${pedido.data_pedido}"></td>
 						<td th:text="${pedido.data_agendamento}"></td>
-						
+
 
 
 						<td> <a class="btn btn-sm btn-warning"
 								th:href="@{alterar_cliente/{idCliente}(idCliente=${cliente.IdCliente})}">Alterar</a>
 						</td>
+						<td>
+							<a class="delete btn btn-sm btn-danger"
+								th:href="@{excluir_cliente/{idCliente}(idCliente=${cliente.idCliente})}"
+								onclick="if (confirm('Deseja realmente excluir o Cliente?')){return true;}else{event.stopPropagation();event.preventDefault();};">
+								Excluir
+							</a>
+						</td>
 					</tr>
+
 				</tbody>
 			</table>
 		</div>
