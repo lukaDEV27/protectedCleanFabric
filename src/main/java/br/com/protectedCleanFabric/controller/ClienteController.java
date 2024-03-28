@@ -19,6 +19,8 @@ public class ClienteController {
 	@Autowired
 	private ClienteService clienteService;
 	
+
+	
 	@GetMapping("/") //nome que eu quiser colocar
 	public String principal(ModelMap model)
 	{
@@ -70,13 +72,26 @@ public class ClienteController {
 	@GetMapping("/excluir_cliente/{idCliente}")
 	public ModelAndView delete(ModelMap model, @PathVariable("idCliente") Long idCliente, RedirectAttributes atributes) throws Exception 
 	{
-		ModelAndView mv = new ModelAndView("cliente");
+		ModelAndView mv = new ModelAndView("redirect:/cliente");
 		model.addAttribute("mensagem", clienteService.deleteById(idCliente));
 		//após a exclusão de um docente eu preciso atualizar a listagem na página
 		//por isso realizo uma nova consulta findall
 		model.addAttribute("clientes", clienteService.findAll());
 		return mv;
 		//termina a exclusão
+	}
+	
+	//Aqui inicia o cadastro de pedido do cliente selecionado;
+	
+	@GetMapping("/pedido/{idCliente}")
+	public ModelAndView cadastroPedido(ModelMap model,@PathVariable("idCliente") Long idCliente) throws Exception 
+	{
+		
+		ModelAndView mv = new ModelAndView("pedido");
+		model.addAttribute("idCliente", idCliente);
+		model.addAttribute("cliente", clienteService.getOneByIdCliente(idCliente));
+		
+		return mv;
 	}
 			
 //

@@ -12,14 +12,14 @@
 <body>
 	<div th:insert="~{layout/menu}"></div>
 
-	<form class="form-horizontal" method="post" th:action="@{/salvar_pedido}" th:object="${PedidoEntity}">
+	<!--<form class="form-horizontal" method="post" th:action="@{/salvar_pedido}" th:object="${PedidoEntity}">
 		<div class="container">
 			<h2>Pedidos</h2>
 			<div class="container">
 				<div class="alert alert-sucess" th:text="${mensagem}" th:if="${not #strings.isEmpty(mensagem)}"></div>
 
 				<input class="form-control" type="hidden" maxlength="50" name="cliente" th:value="${cliente.idCliente}">
-				<!-- <div class="mb-3">
+				 <div class="mb-3">
 					<label for="cliente" class="form-label">Cliente</label>
 					<select class="form-select" aria-label="Selecione o cliente" id="cliente" name="cliente" required>
 						<option value="">Selecione o Cliente</option>
@@ -28,7 +28,7 @@
 							th:value="${cliente.idCliente}">
 						</option>
 					</select>
-				</div> -->
+				</div> 
 
 				<div class="mb-3">
 					<label for="numPedido" class="form-label">Nº pedido</label>
@@ -91,7 +91,7 @@
 		</div>
 
 
-	</form>
+	</form>-->
 	<div class="container">
 		<br>
 		<h5 class="card-title"> Pedidos Cadastrados</h5>
@@ -112,25 +112,25 @@
 						<th>Executado em:</th>
 
 
-					<!--	<th class="col-1"></th> -->
+						<th class="col-1"></th>
 
 
 
 					</tr>
 				</thead>
 				<tbody>
-					<tr th:each="pedido  : ${pedidos}">
-						<td th:text="${pedido.numPedido}"></td>
-						<td th:text="${cliente.Nome + ' ' + cliente.sobrenome}"></td>
-						<td th:text="${pedido.vendedor}"></td>
-						<td th:text="${pedido.lojaVendedor}"></td>
-						<td th:text="${pedido.intermediador}"></td>
-						<td th:text="${pedido.dataPedido}"></td>
-						<td th:text="${pedido.dataAgendamento}"></td>
+					<tr th:each="acompanhar_pedido  : ${pedidos}">
+						<td th:text="${pedido.NumPedido}"></td>
+						<td th:text="${cliente.Nome + ' ' + cliente.Sobrenome}"></td>
+						<td th:text="${pedido.Vendedor}"></td>
+						<td th:text="${pedido.LojaVendedor}"></td>
+						<td th:text="${pedido.Intermediador}"></td>
+						<td th:text="${pedido.DataPedido}"></td>
+						<td th:text="${pedido.DataAgendamento}"></td>
 
 
 
-					<!--	<td> <a class="btn btn-sm btn-warning"
+						<td> <a class="btn btn-sm btn-warning"
 								th:href="@{alterar_cliente/{idCliente}(idCliente=${cliente.IdCliente})}">Alterar</a>
 						</td>
 						<td>
@@ -139,7 +139,7 @@
 								onclick="if (confirm('Deseja realmente excluir o Cliente?')){return true;}else{event.stopPropagation();event.preventDefault();};">
 								Excluir
 							</a>
-						</td> -->
+						</td>
 					</tr>
 
 				</tbody>
