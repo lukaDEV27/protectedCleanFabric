@@ -33,24 +33,24 @@
 						<th>Tipo de Serviço</th>
 						<th>Valor</th>
 
-						<th class="col-1"></th>
-						<th class="col-1"></th>
+						<!--<th class="col-1"></th>
+						<th class="col-1"></th>-->
 
 					</tr>
 				</thead>
 				<tbody>
-					<tr th:each="acompanhar_pedidos : ${pedidos}">
+					<tr th:each="pedido : ${pedidos}">
 						<td th:text="${pedido.numPedido}"></td>
-						<td th:text="${cliente.Nome + ' ' + cliente.sobrenome}"></td>
+						<td th:text="${pedido.cliente.Nome + ' ' + pedido.cliente.sobrenome}"></td>
 						<td th:text="${pedido.vendedor}"></td>
 						<td th:text="${pedido.lojaVendedor}"></td>
 						<td th:text="${pedido.intermediador}"></td>
 						<td th:text="${pedido.dataPedido}"></td>
 						<td th:text="${pedido.dataAgendamento}"></td>
-						<td th:text="${pedido.tipo_servico}"></td>
+						<td th:text="${pedido.tipoServicos}"></td>
 						<td th:text="${pedido.valor}"></td>
 
-						<td> <a class="btn btn-sm btn-warning"
+						<!--<td> <a class="btn btn-sm btn-warning"
 								th:href="@{alterar_pedido/{idPedido}(idPedido=${pedido.IdPedido})}">Alterar</a>
 						</td>
 						<td>
@@ -59,7 +59,7 @@
 								onclick="if (confirm('Deseja realmente excluir o Pedido?')){return true;}else{event.stopPropagation();event.preventDefault();};">
 								Excluir
 							</a>
-						</td>
+						</td>-->
 					</tr>
 				</tbody>
 			</table>
