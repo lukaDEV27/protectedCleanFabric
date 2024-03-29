@@ -12,86 +12,7 @@
 <body>
 	<div th:insert="~{layout/menu}"></div>
 
-	<!--<form class="form-horizontal" method="post" th:action="@{/salvar_pedido}" th:object="${PedidoEntity}">
-		<div class="container">
-			<h2>Pedidos</h2>
-			<div class="container">
-				<div class="alert alert-sucess" th:text="${mensagem}" th:if="${not #strings.isEmpty(mensagem)}"></div>
 
-				<input class="form-control" type="hidden" maxlength="50" name="cliente" th:value="${cliente.idCliente}">
-				 <div class="mb-3">
-					<label for="cliente" class="form-label">Cliente</label>
-					<select class="form-select" aria-label="Selecione o cliente" id="cliente" name="cliente" required>
-						<option value="">Selecione o Cliente</option>
-						<option th:each="cliente : ${clientes}"
-							th:text="${cliente.nome + '  ' + cliente.sobrenome + '  ' + cliente.telefone}"
-							th:value="${cliente.idCliente}">
-						</option>
-					</select>
-				</div> 
-
-				<div class="mb-3">
-					<label for="numPedido" class="form-label">Nº pedido</label>
-					<input type="text" name="numPedido" id="numPedido" class="form-control">
-				</div>
-
-				<div class="mb-3">
-					<label for="numPedidoVendedor" class="form-label">Nº pedido(Vendedor)</label>
-					<input type="text" name="numPedidoVendedor" id="numPedidoVendedor" class="form-control">
-				</div>
-
-				<div class="mb-3">
-					<label for="vendedor" class="form-label">Vendedor</label>
-					<input type="text" name="vendedor" id="vendedor" class="form-control">
-				</div>
-
-				<div class="mb-3">
-					<label for="intermediador" class="form-label">Passado Por:</label>
-					<input type="text" name="intermediador" id="intermediador" class="form-control">
-				</div>
-
-				<div class="mb-3">
-					<label for="dataAgendamento" class="form-label">Data de Execução</label>
-					<input type="date" name="dataAgendamento" id="dataAgendamento" class="form-control" required>
-				</div>
-
-				<div class="mb-3">
-					<label for="valor" class="form-label">Valor</label>
-					<input type="number" name="valor" id="valor" class="form-control" required>
-				</div>
-				<div class="container">
-					<div class="mb-3" form-check>
-						<input type="checkbox" class="form-check-input">
-						<label for="text" class="form-check-label">Lavagem</label>
-					</div>
-
-
-					<div class="mb-3">
-						<input type="checkbox" class="form-check-input">
-						<label for="text" class="form-check-label">Hidratação</label>
-					</div>
-
-					<div class="mb-3">
-						<input type="checkbox" name="tipoServicos" id="impermeabilizacao" class="form-check-input">
-						<label for="text" class="form-check-label">Impermeabilização</label>
-					</div>
-				</div>
-
-
-				<div class="form-group">
-					<label for="observacao">Observações</label>
-					<textarea class="form-control" name="observacao" id="observacao" rows="3"></textarea>
-				</div>
-
-				<div class="mb-3">
-					<button type="submit" class="btn btn-success form-control">Enviar</button>
-				</div>
-
-			</div>
-		</div>
-
-
-	</form>-->
 	<div class="container">
 		<br>
 		<h5 class="card-title"> Pedidos Cadastrados</h5>
@@ -110,6 +31,12 @@
 						<th>Passado Por:</th>
 						<th>Data Pedido</th>
 						<th>Executado em:</th>
+<<<<<<< Updated upstream
+=======
+						<th>Tipo de Serviço</th>
+						<th>Valor</th>
+
+>>>>>>> Stashed changes
 						<th class="col-1"></th>
 						<th class="col-1"></th>
 
@@ -126,6 +53,8 @@
 						<td th:text="${pedido.Intermediador}"></td>
 						<td th:text="${pedido.DataPedido}"></td>
 						<td th:text="${pedido.DataAgendamento}"></td>
+						<td th:text="${pedido.tipo_servico}"></td>
+						<td th:text="${pedido.valor}"></td>
 
 						<td> <a class="btn btn-sm btn-warning"
 								th:href="@{alterar_cliente/{idCliente}(idCliente=${cliente.IdCliente})}">Alterar</a>

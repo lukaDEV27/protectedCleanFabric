@@ -9,7 +9,7 @@
 	<title>Pagina Cliente</title>
 </head>
 
-<body>
+<body id="body-pd">
 	<div th:insert="~{layout/menu}"></div>
 
 	<form class="form-horizontal" method="post" th:action="@{/salvar_cliente}" th:object="${clienteEntity}">
