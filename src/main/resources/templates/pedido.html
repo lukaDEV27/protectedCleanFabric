@@ -92,7 +92,7 @@
 
 
 	</form>
-	<div class="container">
+	<!--<div class="container">
 		<br>
 		<h5 class="card-title"> Pedidos Cadastrados</h5>
 		<br>
@@ -110,12 +110,7 @@
 						<th>Passado Por:</th>
 						<th>Data Pedido</th>
 						<th>Executado em:</th>
-
-
-					<!--	<th class="col-1"></th> -->
-
-
-
+						<th class="col-1"></th>
 					</tr>
 				</thead>
 				<tbody>
@@ -130,7 +125,7 @@
 
 
 
-					<!--	<td> <a class="btn btn-sm btn-warning"
+						<td> <a class="btn btn-sm btn-warning"
 								th:href="@{alterar_cliente/{idCliente}(idCliente=${cliente.IdCliente})}">Alterar</a>
 						</td>
 						<td>
@@ -139,7 +134,7 @@
 								onclick="if (confirm('Deseja realmente excluir o Cliente?')){return true;}else{event.stopPropagation();event.preventDefault();};">
 								Excluir
 							</a>
-						</td> -->
+						</td> 
 					</tr>
 
 				</tbody>
@@ -173,7 +168,7 @@
 				});
 			</script>
 		</div>
-	</div>
+	</div>-->
 
 	<div th:insert="~{layout/rodape}"></div>
 

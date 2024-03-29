@@ -25,7 +25,7 @@ public class AcompanharPedidoController {
 	
 	
 	@GetMapping("/acompanhar_pedido")
-	public String pedido(ModelMap model) {
+	public String acompanharPedido(ModelMap model) {
 		
 		model.addAttribute("pedidos", pedidoService.findAll());
 		model.addAttribute("clientes", clienteService.findAll());

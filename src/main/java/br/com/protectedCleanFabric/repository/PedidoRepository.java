@@ -14,7 +14,9 @@ public interface PedidoRepository extends JpaRepository<PedidoEntity, Long> {
 
 	PedidoEntity getOneByIdPedido(Long idPedido);
 
-	@Query(value = "select * from pedido where ?1 <= current_date;", nativeQuery = true)
+	@Query(value = "SELECT *"
+			+ "FROM pedido"
+			+ "WHERE DATEDIFF(CURDATE(), ?1) >= 365;", nativeQuery = true)
 	List<PedidoEntity> listarClientesDisponiveisRemarketig(Date dataAgendamento);
 
 	
