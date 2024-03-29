@@ -25,6 +25,7 @@
 					<tr>
 						<th>N° Pedido</th>
 						<th>Cliente</th>
+						<th>Mercadoria</th>
 						<th>Vendedor</th>
 						<th>Loja</th>
 						<th>Passado Por:</th>
@@ -32,9 +33,10 @@
 						<th>Executado em:</th>
 						<th>Tipo de Serviço</th>
 						<th>Valor</th>
+						<th>Observações</th>
 
-						<!--<th class="col-1"></th>
-						<th class="col-1"></th>-->
+						<th class="col-1"></th>
+						<th class="col-1"></th>
 
 					</tr>
 				</thead>
@@ -42,6 +44,7 @@
 					<tr th:each="pedido : ${pedidos}">
 						<td th:text="${pedido.numPedido}"></td>
 						<td th:text="${pedido.cliente.Nome + ' ' + pedido.cliente.sobrenome}"></td>
+						<td th:text="${pedido.cliente.mercadoria}"></td>
 						<td th:text="${pedido.vendedor}"></td>
 						<td th:text="${pedido.lojaVendedor}"></td>
 						<td th:text="${pedido.intermediador}"></td>
@@ -49,8 +52,9 @@
 						<td th:text="${pedido.dataAgendamento}"></td>
 						<td th:text="${pedido.tipoServicos}"></td>
 						<td th:text="${pedido.valor}"></td>
+						<td th:text="${pedido.observacao}"></td>
 
-						<!--<td> <a class="btn btn-sm btn-warning"
+						<td> <a class="btn btn-sm btn-warning"
 								th:href="@{alterar_pedido/{idPedido}(idPedido=${pedido.IdPedido})}">Alterar</a>
 						</td>
 						<td>
@@ -59,7 +63,7 @@
 								onclick="if (confirm('Deseja realmente excluir o Pedido?')){return true;}else{event.stopPropagation();event.preventDefault();};">
 								Excluir
 							</a>
-						</td>-->
+						</td>
 					</tr>
 				</tbody>
 			</table>
@@ -82,13 +86,14 @@
 				});
 			</script>
 		</div>
+		
 	</div>
 
 
 
 
 
-	<div th:insert="~{layout/rodape}"></div>
+	<div th:insert="~{layout/rodape}"></div>	
 </body>
 
 </html>
