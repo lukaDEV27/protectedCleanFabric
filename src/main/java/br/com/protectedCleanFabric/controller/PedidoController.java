@@ -42,39 +42,4 @@ public class PedidoController {
 		return mv;
 	}
 	
-	/*@GetMapping("/alterar_pedido/{idPedido}")
-	public ModelAndView update(ModelMap model,@PathVariable("idPedido") Long idPedido) throws Exception 
-	{
-		
-		ModelAndView mv = new ModelAndView("alterar_pedido");
-		model.addAttribute("idPedido", idPedido);
-		model.addAttribute("pedido", pedidoService.getOneByIdPedido(idPedido));
-		
-		return mv;
-	}
-	
-	@PostMapping("/alterar_pedido")
-	public ModelAndView update(
-			ModelMap model,
-			@ModelAttribute("pedidoEntity") PedidoEntity pedidoEntity,
-			RedirectAttributes atributes) throws Exception
-	{
-		ModelAndView mv = new ModelAndView("redirect:/pedido");
-		atributes.addFlashAttribute("mensagem", pedidoService.save(pedidoEntity));
-		
-		return mv;
-	}
-	
-	@GetMapping("/excluir_pedido/{idPedido}")
-	public ModelAndView delete(ModelMap model, @PathVariable("idPedido") Long idPedido, RedirectAttributes atributes) throws Exception 
-	{
-		ModelAndView mv = new ModelAndView("pedido");
-		model.addAttribute("mensagem", pedidoService.deleteById(idPedido));
-		//após a exclusão de um docente eu preciso atualizar a listagem na página
-		//por isso realizo uma nova consulta findall
-		model.addAttribute("pedidos", pedidoService.findAll());
-		return mv;
-		//termina a exclusão
-	}*/
-	
 }
