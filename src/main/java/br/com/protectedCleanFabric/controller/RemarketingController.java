@@ -19,7 +19,7 @@ public class RemarketingController {
 	@GetMapping("/remarketing")//nome que eu quiser colocar
 	public String principal(ModelMap model)
 	{
-		model.addAttribute("pedidos", pedidoService.listarClientesDisponiveisRemarketig(null));
+	/*	model.addAttribute("pedidos", pedidoService.listarClientesDisponiveisRemarketig(null));*/
 		return "remarketing"; //caminho real do arquivo
 	}
 	
