@@ -17,7 +17,7 @@
 		<h5 class="card-title">Pedidos Cadastrados</h5>
 		<br>
 		<div class="container">
-			<table id="tabela_ajax" class="display nowrap" style="width:100%">
+			<table id="example" class="table table-striped" style="width:100%">
 				<nav class="navbar navbar-light bg-light justify-content-between">
 					<a class="navbar-brand">Consultar</a>
 				</nav>
@@ -64,31 +64,21 @@
 				</tbody>
 			</table>
 			<script>
-				$(document).ready(function () {
-					var table = new DataTable('#tabela_ajax', {
-
-						language:
-						{
-							url: '//cdn.datatables.net/plug-ins/2.0.2/i18n/pt-BR.json',
-						},
-						layout: {
-							topStart:
-							{
-								buttons: [
-									{
-										extend: 'copyHtml5',
-										title: 'Relatório do Cadastro de Clientes'
-									},
-									{
-										extend: 'pdfHtml5',
-										title: 'Relatório do Cadastro de Clientes'
-									}
-								]
-
-							}
+				new DataTable('#example', {
+					language:
+					{
+						url: '//cdn.datatables.net/plug-ins/2.0.2/i18n/pt-BR.json',
+					},
+					layout: {
+						topStart: {
+							buttons: [
+								{
+									extend: 'csv',
+									split: ['pdf', 'excel','print']
+								}
+							]
 						}
-					});
-
+					}
 				});
 			</script>
 		</div>
