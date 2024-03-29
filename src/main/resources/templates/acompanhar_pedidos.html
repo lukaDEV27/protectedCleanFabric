@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:th="http://.thymeleaf.orf">
+
+<link rel="stylesheet" href="style.css">
+
+<head th:insert="~{layout/cabecalho}">
+	<meta charset="ISO-8859-1" />
+
+	<title>Pagina De Acompanhar Pedidos</title>
+</head>
+
+<body>
+	<div th:insert="~{layout/menu}"></div>
+
+	<div class="container">
+		<br>
+		<h5 class="card-title">Pedidos Cadastrados</h5>
+		<br>
+		<div class="container">
+			<table id="tabela_ajax" class="display nowrap" style="width:100%">
+				<nav class="navbar navbar-light bg-light justify-content-between">
+					<a class="navbar-brand">Consultar</a>
+				</nav>
+				<thead>
+					<tr>
+						<th>N° Pedido</th>
+						<th>Cliente</th>
+						<th>Vendedor</th>
+						<th>Loja</th>
+						<th>Passado Por:</th>
+						<th>Data Pedido</th>
+						<th>Executado em:</th>
+						<th>Tipo de Serviço</th>
+						<th>Valor</th>
+
+						<th class="col-1"></th>
+						<th class="col-1"></th>
+
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="acompanhar_pedidos : ${pedidos}">
+						<td th:text="${pedido.numPedido}"></td>
+						<td th:text="${cliente.Nome + ' ' + cliente.sobrenome}"></td>
+						<td th:text="${pedido.vendedor}"></td>
+						<td th:text="${pedido.lojaVendedor}"></td>
+						<td th:text="${pedido.intermediador}"></td>
+						<td th:text="${pedido.dataPedido}"></td>
+						<td th:text="${pedido.dataAgendamento}"></td>
+						<td th:text="${pedido.tipo_servico}"></td>
+						<td th:text="${pedido.valor}"></td>
+
+						<td> <a class="btn btn-sm btn-warning"
+								th:href="@{alterar_pedido/{idPedido}(idPedido=${pedido.IdPedido})}">Alterar</a>
+						</td>
+						<td>
+							<a class="delete btn btn-sm btn-danger"
+								th:href="@{excluir_pedido/{idPedido}(idPedido=${pedido.idPedido})}"
+								onclick="if (confirm('Deseja realmente excluir o Pedido?')){return true;}else{event.stopPropagation();event.preventDefault();};">
+								Excluir
+							</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<script>
+				$(document).ready(function () {
+					var table = new DataTable('#tabela_ajax', {
+
+						language:
+						{
+							url: '//cdn.datatables.net/plug-ins/2.0.2/i18n/pt-BR.json',
+						},
+						layout: {
+							topStart:
+							{
+								buttons: [
+									{
+										extend: 'copyHtml5',
+										title: 'Relatório do Cadastro de Clientes'
+									},
+									{
+										extend: 'pdfHtml5',
+										title: 'Relatório do Cadastro de Clientes'
+									}
+								]
+
+							}
+						}
+					});
+
+				});
+			</script>
+		</div>
+	</div>
+
+
+
+
+
+	<div th:insert="~{layout/rodape}"></div>
+</body>
+
+</html>

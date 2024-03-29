@@ -20,8 +20,8 @@ public class AcompanharPedidosController {
 	@GetMapping("/acompanhar_pedidos") //nome que eu quiser colocar
 	public String acompanharPedidos(ModelMap model)
 	{
-		model.addAttribute("docentes", pedidoService.findAll());
-		model.addAttribute("setores", clienteService.findAll());
+		model.addAttribute("pedidos", pedidoService.findAll());
+		model.addAttribute("clientes", clienteService.findAll());
 		return "acompanhar_pedidos"; //caminho real do arquivo
 	}
 
