@@ -34,10 +34,10 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr th:each="cliente  : ${clientes}">
-						<td th:text="${cliente.Nome + ' ' + cliente.sobrenome}"></td>
-						<td th:text="${cliente.telefone}"></td>
-						<td th:text="${cliente.mercadoria}"></td>
+					<tr th:each="pedido  : ${pedidos}">
+						<td th:text="${pedido.cliente.Nome + ' ' + pedido.cliente.sobrenome}"></td>
+						<td th:text="${pedido.cliente.telefone}"></td>
+						<td th:text="${pedido.cliente.mercadoria}"></td>
 						<td th:text="${pedido.dataPedido}"></td>
 						<td th:text="${pedido.dataAgendamento}"></td>
 
@@ -59,8 +59,8 @@
 						topStart: {
 							buttons: [
 								{
-									extend: 'csv',
-									split: ['pdf', 'excel',	'print']
+									extend: 'pdf',
+									split: ['excel', 'print']
 								}
 							]
 						}
