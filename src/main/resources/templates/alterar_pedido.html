@@ -12,7 +12,8 @@
 	<div th:insert="~{layout/menu}"></div>
 
 	<form class="form-horizontal" method="post" th:action="@{/alterar_pedido}" th:object="${PedidoEntity}">
-		<input class="form-control" type="hidden" maxlength="50" name="idPedido" th:value="${pedido.idPedido}">
+		<input class="form-control" type="hidden" maxlength="50" name="idPedido" th:value="${idPedido}">
+		<input class="form-control" type="hidden" maxlength="50" name="cliente" th:value="${pedido.cliente.idCliente}">
 		
 		
 		<div class="container">

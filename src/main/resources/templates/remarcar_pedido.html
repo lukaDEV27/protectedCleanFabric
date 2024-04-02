@@ -17,8 +17,9 @@
 			<div class="container">
 				<div class="alert alert-sucess" th:text="${mensagem}" th:if="${not #strings.isEmpty(mensagem)}"></div>
 
-				<input class="form-control" type="hidden" maxlength="50" name="idPedido"
-					th:value="${pedido.idPedido}">
+				<input class="form-control" type="hidden" maxlength="50" name="idPedido" th:value="${idPedido}">
+				<input class="form-control" type="hidden" maxlength="50" name="cliente"
+					th:value="${pedido.cliente.idCliente}">
 
 
 				<div class="mb-3">
