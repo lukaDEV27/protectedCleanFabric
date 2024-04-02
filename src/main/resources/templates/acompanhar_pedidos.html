@@ -31,6 +31,7 @@
 						<th>Passado Por</th>
 						<th>Data Pedido</th>
 						<th>Executado em</th>
+						<th>Mercadoria</th>
 						<th>Serviço:</th>
 						<th>Valor</th>
 						<th>Observações</th>
@@ -53,6 +54,8 @@
 						<td th:text="${pedido.tipoServicos}"></td>
 						<td th:text="${pedido.valor}"></td>
 						<td th:text="${pedido.observacao}"></td>
+						<td th:text="${pedido.mercadoria}"></td>
+
 
 						<td> <a class="btn btn-sm btn-warning"
 								th:href="@{alterar_pedido/{idPedido}(idPedido=${pedido.IdPedido})}">Alterar</a>
