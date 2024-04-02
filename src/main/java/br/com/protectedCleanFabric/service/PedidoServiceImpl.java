@@ -32,6 +32,7 @@ public class PedidoServiceImpl implements PedidoService{
 			this.mensagem = "Digite a mercadoria do cliente.";
 			throw new Exception("Preencha a mercadoria do cliente.");
 		} else {
+			this.mensagem = "Pedido cadastrado com sucesso!";
 			pedidoRepository.saveAndFlush(pedidoEntity);
 		}
 		return mensagem;
