@@ -19,6 +19,6 @@ public interface PedidoService {
 	String deleteById(Long idPedido) throws Exception;
 	// Termina a exclusão
 
-	@Query(value = "SELECT * FROM pedido WHERE DATEDIFF(CURDATE(), ?1) >= 365;", nativeQuery = true)
+	@Query(value = "SELECT * FROM pedido WHERE timestampdiff(day, ?1, current_date()) >= 365;", nativeQuery = true)
 	List<PedidoEntity> listarClientesDisponiveisRemarketig(Date dataAgendamento);
 }
