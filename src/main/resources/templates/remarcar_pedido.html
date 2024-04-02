@@ -21,14 +21,54 @@
 					th:value="${pedido.cliente.idCliente}">
 
 
-				
+				<div class="mb-3">
+					<input type="hidden" name="numPedido" id="numPedido" class="form-control"
+						th:value="${pedido.numPedido}">
+				</div>
+
+				<div class="mb-3">
+					<input type="hidden" name="numPedidoVendedor" id="numPedidoVendedor" class="form-control"
+						th:value="${pedido.numPedidoVendedor}">
+				</div>
+
+				<div class="mb-3">
+					<input type="hidden" name="vendedor" id="vendedor" class="form-control"
+						th:value="${pedido.vendedor}">
+				</div>
+
+				<div class="mb-3">
+					<input type="hidden" name="loja" id="loja" class="form-control" th:value="${pedido.lojaVendedor}">
+				</div>
+
+				<div class="mb-3">
+					<input type="hidden" name="intermediador" id="intermediador" class="form-control"
+						th:value="${pedido.intermediador}">
+				</div>
+
+				<div class="mb-3">
+					<input type="hidden" name="dataPedido" id="dataPedido" class="form-control"
+						th:value="${pedido.dataPedido}" required>
+				</div>
+
 				<div class="mb-3">
 					<label for="dataAgendamento" class="form-label">Data de Execução</label>
 					<input type="date" name="dataAgendamento" id="dataAgendamento" class="form-control"
 						th:value="${pedido.dataAgendamento}" required>
 				</div>
 
-				
+				<div class="mb-3">
+					<input type="hidden" name="mercadoria" id="mercadoria" class="form-control" required>
+				</div>
+
+				<div class="mb-3">
+					<input type="hidden" name="tipoServicos" id="tipoSevicos" class="form-control"
+						th:value="${pedido.tipoServicos}" required>
+				</div>
+
+				<div class="mb-3">
+					<input type="hidden" name="valor" id="valor" class="form-control" th:value="${pedido.valor}"
+						required>
+				</div>
 
 
 				<div class="mb-3">

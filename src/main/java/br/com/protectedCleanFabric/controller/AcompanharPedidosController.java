@@ -44,7 +44,7 @@ public class AcompanharPedidosController {
 			@ModelAttribute("pedidoEntity") PedidoEntity pedidoEntity,
 			RedirectAttributes atributes) throws Exception
 	{
-		ModelAndView mv = new ModelAndView("redirect:/pedido");
+		ModelAndView mv = new ModelAndView("redirect:/acompanhar_pedidos");
 		atributes.addFlashAttribute("mensagem", pedidoService.save(pedidoEntity));
 		
 		return mv;
