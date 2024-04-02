@@ -12,13 +12,15 @@
 	<div th:insert="~{layout/menu}"></div>
 
 	<form class="form-horizontal" method="post" th:action="@{/alterar_pedido}" th:object="${PedidoEntity}">
+		<input class="form-control" type="hidden" maxlength="50" name="idPedido" th:value="${pedido.idPedido}">
+		
+		
 		<div class="container">
 			<h2>Pedidos</h2>
 			<div class="container">
 				<div class="alert alert-sucess" th:text="${mensagem}" th:if="${not #strings.isEmpty(mensagem)}"></div>
 
-				<input class="form-control" type="hidden" maxlength="50" name="cliente"
-					th:value="${pedido.cliente.idCliente}">
+
 
 
 				<div class="mb-3">
