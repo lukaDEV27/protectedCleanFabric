@@ -118,10 +118,9 @@
 			</table>
 			<script>
 				new DataTable('#example', {
-					/* language:
-					{
-						url: 'cdn.datatables.net/plug-ins/2.0.2/i18n/pt-BR.json',
-					}, */
+					language: {
+						url: '//cdn.datatables.net/plug-ins/2.0.3/i18n/pt-BR.json',
+					},
 					layout: {
 						topStart: {
 							buttons: [
@@ -137,8 +136,9 @@
 		</div>
 	</div>
 
-	<div th:insert="~{layout/rodape}"></div>
+	
 
 </body>
+<div th:insert="~{layout/rodape}"></div>
 
 </html>
