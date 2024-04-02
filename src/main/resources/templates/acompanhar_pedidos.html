@@ -28,13 +28,14 @@
 						<th>Vendedor</th>
 						<th>Loja</th>
 						<th>Passado Por</th>
-						<th>Data do Pedido</th>
+						<th>Data Pedido</th>
 						<th>Executado em</th>
 						<th>Mercadoria</th>
 						<th>Serviço:</th>
 						<th>Valor</th>
 						<th>Observações</th>
 
+						<th class="col-1"></th>
 						<th class="col-1"></th>
 						<th class="col-1"></th>
 
@@ -53,11 +54,15 @@
 						<td th:text="${pedido.tipoServicos}"></td>
 						<td th:text="${pedido.valor}"></td>
 						<td th:text="${pedido.observacao}"></td>
-					
+
 
 
 						<td> <a class="btn btn-sm btn-warning"
 								th:href="@{alterar_pedido/{idPedido}(idPedido=${pedido.IdPedido})}">Alterar</a>
+						</td>
+
+						<td> <a class="btn btn-sm btn-primary"
+								th:href="@{remarcar_pedido/{idPedido}(idPedido=${pedido.IdPedido})}">Remarcar</a>
 						</td>
 						<td>
 							<a class="delete btn btn-sm btn-danger"
@@ -94,7 +99,7 @@
 
 
 
-	
+
 </body>
 <div th:insert="~{layout/rodape}"></div>
 

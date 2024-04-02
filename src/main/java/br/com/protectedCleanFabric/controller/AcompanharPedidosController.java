@@ -66,7 +66,7 @@ public class AcompanharPedidosController {
 	public ModelAndView remarcar(ModelMap model,@PathVariable("idPedido") Long idPedido) throws Exception 
 	{
 		
-		ModelAndView mv = new ModelAndView("reamarcar_pedido");
+		ModelAndView mv = new ModelAndView("remarcar_pedido");
 		model.addAttribute("idPedido", idPedido);
 		model.addAttribute("pedido", pedidoService.getOneByIdPedido(idPedido));
 		

@@ -25,13 +25,13 @@
 				<div class="mb-3">
 					<label for="numPedido" class="form-label">Nº pedido</label>
 					<input type="text" name="numPedido" id="numPedido" class="form-control"
-						th:value="${pedido.num_pedido}">
+						th:value="${pedido.numPedido}">
 				</div>
 
 				<div class="mb-3">
 					<label for="numPedidoVendedor" class="form-label">Nº pedido(Vendedor)</label>
 					<input type="text" name="numPedidoVendedor" id="numPedidoVendedor" class="form-control"
-						th:value="${pedido.num_pedido_vendedor}">
+						th:value="${pedido.numPedidoVendedor}">
 				</div>
 
 				<div class="mb-3">
@@ -41,7 +41,7 @@
 
 				<div class="mb-3">
 					<label for="loja" class="form-label">Loja</label>
-					<input type="text" name="loja" id="loja" class="form-control" th:value="${pedido.loja}">
+					<input type="text" name="loja" id="loja" class="form-control" th:value="${pedido.lojaVendedor}">
 				</div>
 
 				<div class="mb-3">
@@ -53,19 +53,19 @@
 				<div class="mb-3">
 					<label for="dataPedido" class="form-label">Data Pedido</label>
 					<input type="date" name="dataPedido" id="dataPedido" class="form-control"
-						th:value="${pedido.data_pedido}" required>
+						th:value="${pedido.dataPedido}" required>
 				</div>
 
 				<div class="mb-3">
 					<label for="dataAgendamento" class="form-label">Data de Execução</label>
 					<input type="date" name="dataAgendamento" id="dataAgendamento" class="form-control"
-						th:value="${pedido.data_agendamento}" required>
+						th:value="${pedido.dataAgendamento}" required>
 				</div>
 
 				<div class="mb-3">
 					<label for="tipoServicos" class="form-label">Tipo de Serviço:</label>
 					<input type="text" name="tipoServicos" id="tipoSevicos" class="form-control"
-						th:value="${pedido.tipo_servico}" required>
+						th:value="${pedido.tipoServicos}" required>
 				</div>
 
 				<div class="mb-3">
@@ -75,27 +75,8 @@
 				</div>
 				<div class="form-group">
 					<label for="observacao">Observações</label>
-					<textarea class="form-control" name="observacao" id="observacao" rows="3"></textarea>
+					<textarea class="form-control" name="observacao" id="observacao" rows="3" th:value="${pedido.observacao}"></textarea>
 				</div>
-
-
-
-				<!--<div class="container">
-				<div class="mb-3" form-check>
-					<input type="checkbox" class="form-check-input">
-					<label for="text" class="form-check-label">Lavagem</label>
-				</div>
-
-				<div class="mb-3">
-					<input type="checkbox" class="form-check-input">
-					<label for="text" class="form-check-label">Hidratação</label>
-				</div>
-
-				<div class="mb-3">
-					<input type="checkbox" name="tipoServicos" id="impermeabilizacao" class="form-check-input">
-					<label for="text" class="form-check-label">Impermeabilização</label>
-				</div>
-			</div>-->
 
 
 				<div class="mb-3">

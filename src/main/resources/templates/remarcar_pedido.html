@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:th="http://.thymeleaf.orf">
+
+<link rel="stylesheet" href="style.css">
+
+<head th:insert="~{layout/cabecalho}">
+	<meta charset="ISO-8859-1" />
+
+	<title>Pagina De Remarcar</title>
+</head>
+
+<body>
+	<div th:insert="~{layout/menu}"></div>
+
+	<form class="form-horizontal" method="post" th:action="@{/remarcar_pedido}" th:object="${PedidoEntity}">
+		<div class="container">
+			<h2>Remarcar</h2>
+			<div class="container">
+				<div class="alert alert-sucess" th:text="${mensagem}" th:if="${not #strings.isEmpty(mensagem)}"></div>
+
+				<input class="form-control" type="hidden" maxlength="50" name="cliente"
+					th:value="${pedido.cliente.idCliente}">
+
+
+				
+				<div class="mb-3">
+					<label for="dataAgendamento" class="form-label">Data de Execução</label>
+					<input type="date" name="dataAgendamento" id="dataAgendamento" class="form-control"
+						th:value="${pedido.dataAgendamento}" required>
+				</div>
+
+				
+
+
+				<div class="mb-3">
+					<button type="submit" class="btn btn-success form-control">Remarcar</button>
+				</div>
+
+			</div>
+		</div>
+
+
+	</form>
+
+
+	<div th:insert="~{layout/rodape}"></div>
+
+</body>
+
+</html>
