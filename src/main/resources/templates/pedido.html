@@ -19,16 +19,7 @@
 				<div class="alert alert-sucess" th:text="${mensagem}" th:if="${not #strings.isEmpty(mensagem)}"></div>
 
 				<input class="form-control" type="hidden" maxlength="50" name="cliente" th:value="${cliente.idCliente}">
-				<!-- <div class="mb-3">
-					<label for="cliente" class="form-label">Cliente</label>
-					<select class="form-select" aria-label="Selecione o cliente" id="cliente" name="cliente" required>
-						<option value="">Selecione o Cliente</option>
-						<option th:each="cliente : ${clientes}"
-							th:text="${cliente.nome + '  ' + cliente.sobrenome + '  ' + cliente.telefone}"
-							th:value="${cliente.idCliente}">
-						</option>
-					</select>
-				</div> -->
+				
 
 				<div class="mb-3">
 					<label for="numPedido" class="form-label">Nº pedido</label>
@@ -94,84 +85,6 @@
 
 
 	</form>
-
-	<!--<div class="container">
-		<br>
-		<h5 class="card-title"> Pedidos Cadastrados</h5>
-		<br>
-		<div class="container">
-			<table id="tabela_ajax" class="display nowrap" style="width:100%">
-				<nav class="navbar navbar-light bg-light justify-content-between">
-					<a class="navbar-brand">Consultar</a>
-				</nav>
-				<thead>
-					<tr>
-						<th>N° Pedido</th>
-						<th>Cliente</th>
-						<th>Vendedor</th>
-						<th>Loja</th>
-						<th>Passado Por:</th>
-						<th>Data Pedido</th>
-						<th>Executado em:</th>
-						<th class="col-1"></th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr th:each="pedido  : ${pedidos}">
-						<td th:text="${pedido.numPedido}"></td>
-						<td th:text="${cliente.Nome + ' ' + cliente.sobrenome}"></td>
-						<td th:text="${pedido.vendedor}"></td>
-						<td th:text="${pedido.lojaVendedor}"></td>
-						<td th:text="${pedido.intermediador}"></td>
-						<td th:text="${pedido.dataPedido}"></td>
-						<td th:text="${pedido.dataAgendamento}"></td>
-
-
-
-						<td> <a class="btn btn-sm btn-warning"
-								th:href="@{alterar_cliente/{idCliente}(idCliente=${cliente.IdCliente})}">Alterar</a>
-						</td>
-						<td>
-							<a class="delete btn btn-sm btn-danger"
-								th:href="@{excluir_cliente/{idCliente}(idCliente=${cliente.idCliente})}"
-								onclick="if (confirm('Deseja realmente excluir o Cliente?')){return true;}else{event.stopPropagation();event.preventDefault();};">
-								Excluir
-							</a>
-						</td> 
-					</tr>
-
-				</tbody>
-			</table>
-			<script>
-				$(document).ready(function () {
-					var table = new DataTable('#tabela_ajax', {
-
-						language:
-						{
-							url: '//cdn.datatables.net/plug-ins/2.0.2/i18n/pt-BR.json',
-						},
-						layout: {
-							topStart:
-							{
-								buttons: [
-									{
-										extend: 'copyHtml5',
-										title: 'Relatório do Cadastro de Clientes'
-									},
-									{
-										extend: 'pdfHtml5',
-										title: 'Relatório do Cadastro de Clientes'
-									}
-								]
-
-							}
-						}
-					});
-
-				});
-			</script>
-		</div>
-	</div>-->
 
 
 	</div>
