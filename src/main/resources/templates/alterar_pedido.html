@@ -18,7 +18,8 @@
 			<div class="container">
 				<div class="alert alert-sucess" th:text="${mensagem}" th:if="${not #strings.isEmpty(mensagem)}"></div>
 
-				<input class="form-control" type="hidden" maxlength="50" name="cliente" th:value="${cliente.idCliente}">
+				<input class="form-control" type="hidden" maxlength="50" name="cliente"
+					th:value="${pedido.cliente.idCliente}">
 
 
 				<div class="mb-3">
@@ -35,37 +36,42 @@
 
 				<div class="mb-3">
 					<label for="vendedor" class="form-label">Vendedor</label>
-					<input type="text" name="vendedor" id="vendedor" class="form-control">
+					<input type="text" name="vendedor" id="vendedor" class="form-control" th:value="${pedido.vendedor}">
 				</div>
 
 				<div class="mb-3">
 					<label for="loja" class="form-label">Loja</label>
-					<input type="text" name="loja" id="loja" class="form-control">
+					<input type="text" name="loja" id="loja" class="form-control" th:value="${pedido.loja}">
 				</div>
 
 				<div class="mb-3">
 					<label for="intermediador" class="form-label">Passado Por:</label>
-					<input type="text" name="intermediador" id="intermediador" class="form-control">
+					<input type="text" name="intermediador" id="intermediador" class="form-control"
+						th:value="${pedido.intermediador}">
 				</div>
 
 				<div class="mb-3">
 					<label for="dataPedido" class="form-label">Data Pedido</label>
-					<input type="date" name="dataPedido" id="dataPedido" class="form-control" required>
+					<input type="date" name="dataPedido" id="dataPedido" class="form-control"
+						th:value="${pedido.data_pedido}" required>
 				</div>
 
 				<div class="mb-3">
 					<label for="dataAgendamento" class="form-label">Data de Execução</label>
-					<input type="date" name="dataAgendamento" id="dataAgendamento" class="form-control" required>
+					<input type="date" name="dataAgendamento" id="dataAgendamento" class="form-control"
+						th:value="${pedido.data_agendamento}" required>
 				</div>
 
 				<div class="mb-3">
 					<label for="tipoServicos" class="form-label">Tipo de Serviço:</label>
-					<input type="text" name="tipoServicos" id="tipoSevicos" class="form-control" required>
+					<input type="text" name="tipoServicos" id="tipoSevicos" class="form-control"
+						th:value="${pedido.tipo_servico}" required>
 				</div>
 
 				<div class="mb-3">
 					<label for="valor" class="form-label">Valor</label>
-					<input type="number" name="valor" id="valor" class="form-control" required>
+					<input type="number" name="valor" id="valor" class="form-control" th:value="${pedido.valor}"
+						required>
 				</div>
 				<div class="form-group">
 					<label for="observacao">Observações</label>
