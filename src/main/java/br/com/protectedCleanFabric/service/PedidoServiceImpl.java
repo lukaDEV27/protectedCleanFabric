@@ -1,6 +1,5 @@
 package br.com.protectedCleanFabric.service;
 
-import java.sql.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -65,13 +64,5 @@ public class PedidoServiceImpl implements PedidoService{
 		return mensagem;
 	}
 
-	@Override
-	public List<PedidoEntity> listarClientesDisponiveisRemarketig(Date dataAgendamento) {
-		
-		return pedidoRepository.listarClientesDisponiveisRemarketig(dataAgendamento);
-	}
-
-
-	
 
 }

@@ -53,7 +53,7 @@ public class AcompanharPedidosController {
 	@GetMapping("/excluir_pedido/{idPedido}")
 	public ModelAndView delete(ModelMap model, @PathVariable("idPedido") Long idPedido, RedirectAttributes atributes) throws Exception 
 	{
-		ModelAndView mv = new ModelAndView("pedido");
+		ModelAndView mv = new ModelAndView("redirect:/acompanhar_pedidos");
 		model.addAttribute("mensagem", pedidoService.deleteById(idPedido));
 		//após a exclusão de um docente eu preciso atualizar a listagem na página
 		//por isso realizo uma nova consulta findall
