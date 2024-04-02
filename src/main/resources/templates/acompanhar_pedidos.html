@@ -25,11 +25,10 @@
 					<tr>
 						<th>N°Pedido</th>
 						<th>Cliente</th>
-						<th>Mercadoria</th>
 						<th>Vendedor</th>
 						<th>Loja</th>
 						<th>Passado Por</th>
-						<th>Data Pedido</th>
+						<th>Data do Pedido</th>
 						<th>Executado em</th>
 						<th>Mercadoria</th>
 						<th>Serviço:</th>
@@ -45,16 +44,16 @@
 					<tr th:each="pedido : ${pedidos}">
 						<td th:text="${pedido.numPedido}"></td>
 						<td th:text="${pedido.cliente.Nome + ' ' + pedido.cliente.sobrenome}"></td>
-						<td th:text="${pedido.cliente.mercadoria}"></td>
 						<td th:text="${pedido.vendedor}"></td>
 						<td th:text="${pedido.lojaVendedor}"></td>
 						<td th:text="${pedido.intermediador}"></td>
 						<td th:text="${pedido.dataPedido}"></td>
 						<td th:text="${pedido.dataAgendamento}"></td>
+						<td th:text="${pedido.mercadoria}"></td>
 						<td th:text="${pedido.tipoServicos}"></td>
 						<td th:text="${pedido.valor}"></td>
 						<td th:text="${pedido.observacao}"></td>
-						<td th:text="${pedido.mercadoria}"></td>
+					
 
 
 						<td> <a class="btn btn-sm btn-warning"
