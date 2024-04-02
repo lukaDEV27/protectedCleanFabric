@@ -50,6 +50,9 @@ public class PedidoEntity implements Serializable{
 	@Column(name = "observacao")
 	private String observacao;
 	
+	@Column(name = "mercadoria")
+	private String mercadoria;
+	
 	@Column(name = "tipo_servico")
 	private String tipoServicos;
 	
@@ -121,6 +124,14 @@ public class PedidoEntity implements Serializable{
 
 	public void setDataAgendamento(Date dataAgendamento) {
 		this.dataAgendamento = dataAgendamento;
+	}
+
+	public String getMercadoria() {
+		return mercadoria;
+	}
+
+	public void setMercadoria(String mercadoria) {
+		this.mercadoria = mercadoria;
 	}
 
 	public Double getValor() {

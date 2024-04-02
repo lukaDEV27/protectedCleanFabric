@@ -26,12 +26,12 @@ public class PedidoServiceImpl implements PedidoService{
 		} else if (pedidoEntity.getDataAgendamento() == null) {
 			this.mensagem = "Preencha a data do agendamento do serviço.";
 			throw new Exception("Preencha a data do agendamento do serviço.");
-		/*} else if (pedidoEntity.getTipoServicos() == null) {
+		} else if (pedidoEntity.getTipoServicos() == null) {
 			this.mensagem = "Selecione o tipo de serviço agendado.";
-			throw new Exception("Selecione o tipo de serviço agendado.");*/
-		} else if (pedidoEntity.getCliente() == null){
-			this.mensagem = "Preencha o campo do cliente que solicitou o serviço.";
-			throw new Exception("Preencha o campo do cliente que solicitou o serviço.");
+			throw new Exception("Selecione o tipo de serviço agendado.");
+		} else if (pedidoEntity.getMercadoria() == null) {
+			this.mensagem = "Digite a mercadoria do cliente.";
+			throw new Exception("Preencha a mercadoria do cliente.");
 		} else {
 			pedidoRepository.saveAndFlush(pedidoEntity);
 		}

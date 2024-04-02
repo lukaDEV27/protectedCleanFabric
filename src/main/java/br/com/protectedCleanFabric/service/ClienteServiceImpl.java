@@ -27,9 +27,6 @@ public class ClienteServiceImpl implements ClienteService{
 		} else if (clienteEntity.getEndereco() == null) {
 			this.mensagem = "Digite o endereço do cliente.";
 			throw new Exception("Preencha o endereço do cliente.");
-		} else if (clienteEntity.getMercadoria() == null) {
-			this.mensagem = "Digite a mercadoria do cliente.";
-			throw new Exception("Preencha a mercadoria do cliente.");
 		} else {
 			this.mensagem = "Cliente cadastrado com sucesso!";
 			clienteRepository.saveAndFlush(clienteEntity);

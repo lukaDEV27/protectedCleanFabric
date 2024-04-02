@@ -42,9 +42,6 @@ public class ClienteEntity implements Serializable{
 	@Column(name = "cep")
 	private String cep;
 	
-	@Column(name = "mercadoria")
-	private String mercadoria;
-	
 	@OneToMany(mappedBy = "cliente")
     private List<PedidoEntity> pedidos;
 
@@ -110,14 +107,6 @@ public class ClienteEntity implements Serializable{
 
 	public void setCep(String cep) {
 		this.cep = cep;
-	}
-
-	public String getMercadoria() {
-		return mercadoria;
-	}
-
-	public void setMercadoria(String mercadoria) {
-		this.mercadoria = mercadoria;
 	}
 
 	public List<PedidoEntity> getPedidos() {
