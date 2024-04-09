@@ -43,7 +43,7 @@
 
 				<div class="mb-3">
 					<label for="loja" class="form-label">Loja</label>
-					<input type="text" name="loja" id="loja" class="form-control" th:value="${pedido.lojaVendedor}">
+					<input type="text" name="lojaVendedor" id="lojaVendedor" class="form-control" th:value="${pedido.lojaVendedor}">
 				</div>
 
 				<div class="mb-3">
@@ -61,11 +61,13 @@
 				<div class="mb-3">
 					<label for="dataAgendamento" class="form-label">Data de Execução</label>
 					<input type="date" name="dataAgendamento" id="dataAgendamento" class="form-control"
-						th:value="${pedido.dataAgendamento}" required>
+						th:value="${pedido.dataAgendamento}">
 				</div>
 
 				<div class="mb-3">
-					<input type="hidden" name="mercadoria" id="mercadoria" class="form-control" required>
+					<label for="mercadoria" class="form-label">Mercadoria</label>
+					<input type="text" name="mercadoria" id="mercadoria" class="form-control" 
+						th:value="${pedido.mercadoria}" required>
 				</div>
 
 				<div class="mb-3">
@@ -77,12 +79,11 @@
 				<div class="mb-3">
 					<label for="valor" class="form-label">Valor</label>
 					<input type="text" name="valor" id="valor" class="form-control" placeholder="999.99"
-						th:value="${pedido.valor}" required>
+						th:value="${pedido.valor}">
 				</div>
 				<div class="form-group">
 					<label for="observacao">Observações</label>
-					<textarea class="form-control" name="observacao" id="observacao" rows="3"
-						th:value="${pedido.observacao}"></textarea>
+					<textarea class="form-control" name="observacao" id="observacao" rows="3"th:field="${pedido.observacao}"></textarea>
 				</div>
 
 

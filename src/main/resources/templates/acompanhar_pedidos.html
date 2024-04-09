@@ -24,6 +24,8 @@
 					<tr>
 						<th>N°Pedido</th>
 						<th>Cliente</th>
+						<th>Telefone</th>
+						<th>Endereço</th>
 						<th>Vendedor</th>
 						<th>Loja</th>
 						<th>Passado Por</th>
@@ -44,6 +46,8 @@
 					<tr th:each="pedido : ${pedidos}">
 						<td th:text="${pedido.numPedido}"></td>
 						<td th:text="${pedido.cliente.Nome + ' ' + pedido.cliente.sobrenome}"></td>
+						<td th:text="${pedido.cliente.telefone}"></td>
+						<td th:text="${pedido.cliente.endereco + ' ' + pedido.cliente.bairro + ' ' + pedido.cliente.cep}"></td>
 						<td th:text="${pedido.vendedor}"></td>
 						<td th:text="${pedido.lojaVendedor}"></td>
 						<td th:text="${pedido.intermediador}"></td>
