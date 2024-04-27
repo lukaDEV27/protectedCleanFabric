@@ -56,9 +56,20 @@ public class PedidoEntity implements Serializable{
 	@Column(name = "tipo_servico")
 	private String tipoServicos;
 	
+	@Column(name = "status_agendamento")
+	private String statusAgendamento;
+	
 	@ManyToOne
     @JoinColumn(name = "cliente_id")
     private ClienteEntity cliente;
+
+	public String getStatusAgendamento() {
+		return statusAgendamento;
+	}
+
+	public void setStatusAgendamento(String statusAgendamento) {
+		this.statusAgendamento = statusAgendamento;
+	}
 
 	public Long getIdPedido() {
 		return idPedido;
