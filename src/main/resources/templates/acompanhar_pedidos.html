@@ -8,6 +8,7 @@
 	<title>Pagina De Acompanhar Pedidos</title>
 </head>
 
+
 <body>
 	<div th:insert="~{layout/menu}"></div>
 
@@ -26,15 +27,15 @@
 						<th>Cliente</th>
 						<th>Telefone</th>
 						<th>Endereço</th>
-						<th>Vendedor</th>
-						<th>Loja</th>
-						<th>Passado Por</th>
-						<th>Data Pedido</th>
 						<th>Executado em</th>
 						<th>Mercadoria</th>
 						<th>Serviço:</th>
 						<th>Valor</th>
 						<th>Status</th>
+						<th>Vendedor</th>
+						<th>Loja</th>
+						<th>Passado Por</th>
+						<th>Data Pedido</th>
 						<th>Observações</th>
 
 						<th class="col-1"></th>
@@ -48,16 +49,18 @@
 						<td th:text="${pedido.numPedido}"></td>
 						<td th:text="${pedido.cliente.Nome + ' ' + pedido.cliente.sobrenome}"></td>
 						<td th:text="${pedido.cliente.telefone}"></td>
-						<td th:text="${pedido.cliente.endereco + ' ' + pedido.cliente.bairro + ' ' + pedido.cliente.cep}"></td>
-						<td th:text="${pedido.vendedor}"></td>
-						<td th:text="${pedido.lojaVendedor}"></td>
-						<td th:text="${pedido.intermediador}"></td>
-						<td th:text="${pedido.dataPedido}"></td>
+						<td
+							th:text="${pedido.cliente.endereco + ' ' + pedido.cliente.bairro + ' ' + pedido.cliente.cep}">
+						</td>
 						<td th:text="${pedido.dataAgendamento}"></td>
 						<td th:text="${pedido.mercadoria}"></td>
 						<td th:text="${pedido.tipoServicos}"></td>
 						<td th:text="${pedido.valor}"></td>
 						<td th:text="${pedido.statusAgendamento}"></td>
+						<td th:text="${pedido.vendedor}"></td>
+						<td th:text="${pedido.lojaVendedor}"></td>
+						<td th:text="${pedido.intermediador}"></td>
+						<td th:text="${pedido.dataPedido}"></td>
 						<td th:text="${pedido.observacao}"></td>
 
 
@@ -81,9 +84,11 @@
 			</table>
 			<script>
 				new DataTable('#example', {
+					responsive: true,
 					language: {
 						url: '//cdn.datatables.net/plug-ins/2.0.3/i18n/pt-BR.json',
 					},
+
 					layout: {
 						topStart: {
 							buttons: [
