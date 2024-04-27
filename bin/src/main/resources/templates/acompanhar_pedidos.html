@@ -34,7 +34,6 @@
 						<th>Mercadoria</th>
 						<th>Serviço:</th>
 						<th>Valor</th>
-						<th>Status</th>
 						<th>Observações</th>
 
 						<th class="col-1"></th>
@@ -57,7 +56,6 @@
 						<td th:text="${pedido.mercadoria}"></td>
 						<td th:text="${pedido.tipoServicos}"></td>
 						<td th:text="${pedido.valor}"></td>
-						<td th:text="${pedido.statusAgendamento}"></td>
 						<td th:text="${pedido.observacao}"></td>
 
 
@@ -106,6 +104,6 @@
 
 
 </body>
-
+<div th:insert="~{layout/rodape}"></div>
 
 </html>

@@ -18,7 +18,7 @@
 				<div class="alert alert-sucess" th:text="${mensagem}" th:if="${not #strings.isEmpty(mensagem)}"></div>
 
 				<input class="form-control" type="hidden" maxlength="50" name="cliente" th:value="${cliente.idCliente}">
-				
+
 
 				<div class="mb-3">
 					<label for="numPedido" class="form-label">Nº pedido</label>
@@ -46,7 +46,7 @@
 
 				<div class="mb-3">
 					<label for="dataPedido" class="form-label">Data Pedido</label>
-					<input type="date" name="dataPedido" id="dataPedido" class="form-control" required>
+					<input type="date" name="dataPedido" id="dataPedido" class="form-control">
 				</div>
 
 				<div class="mb-3">
@@ -55,17 +55,22 @@
 				</div>
 				<div class="mb-3">
 					<label for="mercadoria" class="form-label">Mercadoria</label>
-					<input type="text" name="mercadoria" id="mercadoria" class="form-control" required>
+					<input type="text" name="mercadoria" id="mercadoria" class="form-control">
 				</div>
 
 				<div class="mb-3">
 					<label for="tipoServicos" class="form-label">Tipo de Serviço:</label>
-					<input type="text" name="tipoServicos" id="tipoSevicos" class="form-control" required>
+					<input type="text" name="tipoServicos" id="tipoSevicos" class="form-control">
 				</div>
 
 				<div class="mb-3">
 					<label for="valor" class="form-label">Valor</label>
 					<input type="text" name="valor" id="valor" class="form-control" placeholder="999.99">
+				</div>
+				
+				<div class="mb-3">
+					<label for="status" class="form-label">Status</label>
+					<input type="text" name="status" id="status" class="form-control" placeholder="Agendado ou Não Agendado">
 				</div>
 
 
@@ -90,7 +95,7 @@
 	</div>
 
 
-	<div th:insert="~{layout/rodape}"></div>
+	
 
 </body>
 

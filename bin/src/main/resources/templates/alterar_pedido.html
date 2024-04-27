@@ -11,69 +11,81 @@
 <body>
 	<div th:insert="~{layout/menu}"></div>
 
-	<form class="form-horizontal" method="post" th:action="@{/salvar_pedido}" th:object="${PedidoEntity}">
+	<form class="form-horizontal" method="post" th:action="@{/alterar_pedido}" th:object="${PedidoEntity}">
+		<input class="form-control" type="hidden" maxlength="50" name="idPedido" th:value="${idPedido}">
+		<input class="form-control" type="hidden" maxlength="50" name="cliente" th:value="${pedido.cliente.idCliente}">
+		
+		
 		<div class="container">
 			<h2>Pedidos</h2>
 			<div class="container">
 				<div class="alert alert-sucess" th:text="${mensagem}" th:if="${not #strings.isEmpty(mensagem)}"></div>
 
-				<input class="form-control" type="hidden" maxlength="50" name="cliente" th:value="${cliente.idCliente}">
-				
+
+
 
 				<div class="mb-3">
 					<label for="numPedido" class="form-label">Nº pedido</label>
-					<input type="text" name="numPedido" id="numPedido" class="form-control">
+					<input type="text" name="numPedido" id="numPedido" class="form-control"
+						th:value="${pedido.numPedido}">
 				</div>
 
 				<div class="mb-3">
 					<label for="numPedidoVendedor" class="form-label">Nº pedido(Vendedor)</label>
-					<input type="text" name="numPedidoVendedor" id="numPedidoVendedor" class="form-control">
+					<input type="text" name="numPedidoVendedor" id="numPedidoVendedor" class="form-control"
+						th:value="${pedido.numPedidoVendedor}">
 				</div>
 
 				<div class="mb-3">
 					<label for="vendedor" class="form-label">Vendedor</label>
-					<input type="text" name="vendedor" id="vendedor" class="form-control">
+					<input type="text" name="vendedor" id="vendedor" class="form-control" th:value="${pedido.vendedor}">
 				</div>
+
 				<div class="mb-3">
 					<label for="loja" class="form-label">Loja</label>
-					<input type="text" name="lojaVendedor" id="lojaVendedor" class="form-control">
+					<input type="text" name="lojaVendedor" id="lojaVendedor" class="form-control" th:value="${pedido.lojaVendedor}">
 				</div>
 
 				<div class="mb-3">
 					<label for="intermediador" class="form-label">Passado Por:</label>
-					<input type="text" name="intermediador" id="intermediador" class="form-control">
+					<input type="text" name="intermediador" id="intermediador" class="form-control"
+						th:value="${pedido.intermediador}">
 				</div>
 
 				<div class="mb-3">
 					<label for="dataPedido" class="form-label">Data Pedido</label>
-					<input type="date" name="dataPedido" id="dataPedido" class="form-control" required>
+					<input type="date" name="dataPedido" id="dataPedido" class="form-control"
+						th:value="${pedido.dataPedido}" required>
 				</div>
 
 				<div class="mb-3">
 					<label for="dataAgendamento" class="form-label">Data de Execução</label>
-					<input type="date" name="dataAgendamento" id="dataAgendamento" class="form-control">
+					<input type="date" name="dataAgendamento" id="dataAgendamento" class="form-control"
+						th:value="${pedido.dataAgendamento}">
 				</div>
+
 				<div class="mb-3">
 					<label for="mercadoria" class="form-label">Mercadoria</label>
-					<input type="text" name="mercadoria" id="mercadoria" class="form-control" required>
+					<input type="text" name="mercadoria" id="mercadoria" class="form-control" 
+						th:value="${pedido.mercadoria}" required>
 				</div>
 
 				<div class="mb-3">
 					<label for="tipoServicos" class="form-label">Tipo de Serviço:</label>
-					<input type="text" name="tipoServicos" id="tipoSevicos" class="form-control" required>
+					<input type="text" name="tipoServicos" id="tipoSevicos" class="form-control"
+						th:value="${pedido.tipoServicos}" required>
 				</div>
 
 				<div class="mb-3">
 					<label for="valor" class="form-label">Valor</label>
-					<input type="text" name="valor" id="valor" class="form-control" placeholder="999.99">
+					<input type="text" name="valor" id="valor" class="form-control" placeholder="999.99"
+						th:value="${pedido.valor}">
 				</div>
-
-
-
 				<div class="form-group">
 					<label for="observacao">Observações</label>
-					<textarea class="form-control" name="observacao" id="observacao" rows="3"></textarea>
+					<textarea class="form-control" name="observacao" id="observacao" rows="3"th:field="${pedido.observacao}"></textarea>
 				</div>
+
 
 				<div class="mb-3">
 					<button type="submit" class="btn btn-success form-control">Enviar</button>
@@ -84,10 +96,6 @@
 
 
 	</form>
-
-
-	</div>
-	</div>
 
 
 	<div th:insert="~{layout/rodape}"></div>

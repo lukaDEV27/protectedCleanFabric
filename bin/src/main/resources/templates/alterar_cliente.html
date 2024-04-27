@@ -22,13 +22,13 @@
 
 				<div class="mb-3">
 					<label for="nome" class="form-label">Nome</label>
-					<input type="text" name="nome" id="nome" class="form-control" th:value="${cliente.Nome}">
+					<input type="text" name="nome" id="nome" class="form-control" th:value="${cliente.Nome}" required>
 				</div>
 
 				<div class="mb-3">
 					<label for="sobrenome" class="form-label">Sobrenome</label>
 					<input type="text" name="sobrenome" id="sobrenome" class="form-control"
-						th:value="${cliente.sobrenome}">
+						th:value="${cliente.sobrenome}" required>
 				</div>
 
 				<div class="mb-3">
@@ -39,7 +39,8 @@
 
 				<div class="mb-3">
 					<label for="endereço" class="form-label">Endereço</label>
-					<input type="text" name="endereco" id="endereco" class="form-control" th:value="${cliente.endereco}">
+					<input type="text" name="endereco" id="endereco" class="form-control" th:value="${cliente.endereco}"
+						required>
 				</div>
 
 				<div class="mb-3">
@@ -54,7 +55,8 @@
 
 				<div class="mb-3">
 					<label for="telefone" class="form-label">Telefone</label>
-					<input type="tel" name="telefone" id="telefone" class="form-control" th:value="${cliente.telefone}">
+					<input type="tel" name="telefone" id="telefone" class="form-control" th:value="${cliente.telefone}"
+						required>
 				</div>
 
 

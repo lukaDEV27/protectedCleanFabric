@@ -11,6 +11,7 @@
 	<groupId>br.com.protectedCleanFabric</groupId>
 	<artifactId>protectedCleanFabric</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
 	<name>protectedCleanFabric</name>
 	<description>Sistema de cadastro e agendamento de pedidos</description>
 	<properties>
@@ -40,7 +41,6 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		
 	</dependencies>
 
 	<build>
