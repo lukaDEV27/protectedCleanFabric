@@ -38,7 +38,7 @@
 				</div>
 
 				<div class="mb-3">
-					<input type="hidden" name="loja" id="loja" class="form-control" th:value="${pedido.lojaVendedor}">
+					<input type="hidden" name="lojaVendedor" id="lojaVendedor" class="form-control" th:value="${pedido.lojaVendedor}">
 				</div>
 
 				<div class="mb-3">
@@ -48,27 +48,34 @@
 
 				<div class="mb-3">
 					<input type="hidden" name="dataPedido" id="dataPedido" class="form-control"
-						th:value="${pedido.dataPedido}" required>
+						th:value="${pedido.dataPedido}">
 				</div>
 
 				<div class="mb-3">
 					<label for="dataAgendamento" class="form-label">Data de Execução</label>
 					<input type="date" name="dataAgendamento" id="dataAgendamento" class="form-control"
-						th:value="${pedido.dataAgendamento}" required>
+						th:value="${pedido.dataAgendamento}">
 				</div>
 
 				<div class="mb-3">
-					<input type="hidden" name="mercadoria" id="mercadoria" class="form-control" required>
+					<input type="hidden" name="mercadoria" id="mercadoria" class="form-control" th:value="${pedido.mercadoria}">
 				</div>
 
 				<div class="mb-3">
 					<input type="hidden" name="tipoServicos" id="tipoSevicos" class="form-control"
-						th:value="${pedido.tipoServicos}" required>
+						th:value="${pedido.tipoServicos}" >
 				</div>
 
 				<div class="mb-3">
-					<input type="hidden" name="valor" id="valor" class="form-control" th:value="${pedido.valor}"
-						required>
+					<input type="hidden" name="valor" id="valor" class="form-control" th:value="${pedido.valor}">
+				</div>
+				
+				<div class="mb-3">
+					<input type="hidden" name="statusAgendamento" id="statusAgendamento" class="form-control" th:value="${pedido.statusAgendamento}">
+				</div>
+				
+				<div class="mb-3">
+					<input type="hidden" name="observacao" id="observacao" class="form-control" th:value="${pedido.observacao}">
 				</div>
 
 
